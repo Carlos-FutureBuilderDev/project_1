@@ -1,18 +1,17 @@
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:project_1/api/user_api.dart';
 import 'package:project_1/models/user.dart';
 import 'package:project_1/ui/themes/app_colors.dart';
 
-class SignUpRoute extends StatefulWidget {
-  const SignUpRoute({Key? key}) : super(key: key);
+class CreateUserRoute extends StatefulWidget {
+  const CreateUserRoute({Key? key}) : super(key: key);
 
   @override
-  State<SignUpRoute> createState() => _SignUpRouteState();
+  State<CreateUserRoute> createState() => _CreateUserRouteState();
 }
 
-class _SignUpRouteState extends State<SignUpRoute> {
+class _CreateUserRouteState extends State<CreateUserRoute> {
   final GlobalKey<FormState> _signUpFormKey =
       new GlobalKey<FormState>(debugLabel: '_signUpFormKey');
   final TextEditingController _messageController = TextEditingController();
@@ -203,7 +202,8 @@ class _SignUpRouteState extends State<SignUpRoute> {
                     letterSpacing: 0.5,
                   ),
                 ),
-                onPressed: () => _signUp(),
+                onPressed: null,
+                // onPressed: () => _signUp(),
               ),
             ),
           ),
@@ -454,14 +454,14 @@ class _SignUpRouteState extends State<SignUpRoute> {
     );
   }
 
-  void _signUp() {
-    if (_signUpFormKey.currentState!.validate()) {
-      UserAPI userAPI = UserAPI();
-      userAPI
-          .newUser(_user)
-          .then((final dynamic response) => _navigate('sign_in'));
-    }
-  }
+  // void _signUp() {
+  //   if (_signUpFormKey.currentState!.validate()) {
+  //     UserAPI userAPI = UserAPI();
+  //     userAPI
+  //         .createUser(_user)
+  //         .then((final dynamic response) => _navigate('sign_in'));
+  //   }
+  // }
 
   TextFormField _username() {
     return TextFormField(
