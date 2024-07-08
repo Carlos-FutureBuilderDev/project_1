@@ -1,4 +1,3 @@
-// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:project_1/utils/common/common.dart';
@@ -13,7 +12,6 @@ class LandingRoute extends StatefulWidget {
 class _LandingRouteState extends State<LandingRoute> {
   String _progressMessage = 'Loading...';
   bool _isProgressLoading = false;
-
   @override
   void initState() {
     super.initState();

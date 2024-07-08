@@ -148,7 +148,7 @@ class Common {
       const Padding(
         padding: EdgeInsets.only(left: 16.0),
         child: Image(
-          image: AssetImage('images/atclogo.png'),
+          image: AssetImage('images/image.png'),
           height: 40.0,
           width: 70.0,
         ),
